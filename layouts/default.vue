@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav
-      class="navbar header has-shadow is-primary"
+      class="navbar header has-shadow is-primary nav-color"
       role="navigation"
       aria-label="main navigation"
     >
@@ -66,3 +66,9 @@ export default class Default extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.nav-color {
+  background-color: aqua;
+}
+</style>
