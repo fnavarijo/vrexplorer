@@ -16,6 +16,17 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'nuxt/no-cjs-in-config': 'off'
+    // eslint
+    'nuxt/no-cjs-in-config': 'off',
+    'space-before-function-paren': ['error', 'never'],
+    'comma-dangle': ['error', {
+      'arrays': 'always-multiline',
+      'objects': 'always-multiline',
+      'imports': 'never',
+      'exports': 'never',
+      'functions': 'never'
+    }],
+    // ts-lint
+    '@typescript-eslint/explicit-function-return-type': ['error'],
   }
 }
