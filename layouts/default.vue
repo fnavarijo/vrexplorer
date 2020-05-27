@@ -23,6 +23,7 @@
         <p class="menu-label is-hidden-touch">
           General
         </p>
+        {{ axles }}
         <ul class="menu-list">
           <li v-for="(item, key) of items" :key="key">
             <nuxt-link :to="item.to" exact-active-class="is-active">
@@ -43,19 +44,25 @@
 import { Component } from 'nuxt-property-decorator';
 import Vue from 'vue';
 
+import { counterStore } from '@/store';
+
 @Component
 export default class Default extends Vue {
   items = [
     {
       title: 'Home',
       icon: 'home',
-      to: { name: 'index' }
+      to: { name: 'index' },
     },
     {
       title: 'Inspire',
       icon: 'lightbulb',
-      to: { name: 'inspire' }
-    }
+      to: { name: 'inspire' },
+    },
   ];
+
+  get axles(): number {
+    return counterStore.axles;
+  }
 }
 </script>
